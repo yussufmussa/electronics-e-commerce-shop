@@ -1,0 +1,2 @@
+
+@livewire('update-profile-password')
