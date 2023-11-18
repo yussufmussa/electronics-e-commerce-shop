@@ -1,68 +1,64 @@
 @extends('frontend.layouts.base')
 @section('title', 'Products')
 @section('contents')
-<!-- Start Breadcrumb Area  -->
-<div class="axil-breadcrumb-area">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-8">
-                <div class="inner">
-                    <ul class="axil-breadcrumb">
-                        <li class="axil-breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="separator"></li>
-                        <li class="axil-breadcrumb-item active" aria-current="page">Products</li>
-                    </ul>
-                    <h1 class="title">All Products</h1>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</div>
-<!-- End Breadcrumb Area  -->
 <!-- Start Shop Area  -->
-<div class="axil-product-area bg-color-white axil-section-gap">
+<div class="page-style-a">
 	<div class="container">
-		<div class="section-title-wrapper">
-			<span class="title-highlighter highlighter-primary"> <i class="far fa-shopping-basket"></i> Our Products</span>
-			<h2 class="title">New Products</h2>
+		<div class="page-intro">
+			<h2>Shop</h2>
+			<ul class="bread-crumb">
+				<li class="has-separator"><i class="ion ion-md-home"></i> <a href="/">Home</a></li>
+				<li class="is-marked"><a href="/">Shop</a></li>
+			</ul>
 		</div>
-		<div class="explore-product-activation slick-layout-wrapper slick-layout-wrapper--15 axil-slick-arrow arrow-top-slide">
-			<div class="slick-single-layout">
-				<div class="row row--15">
-					@foreach($products as $product)
-					<div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb--30">
-						<div class="axil-product product-style-one">
-							<div class="thumbnail">
-								<a href="{{ route('product.details', $product->slug) }}">
-									<img data-sal="zoom-out" data-sal-delay="200" data-sal-duration="800" loading="lazy" class="main-img" src="{{ asset('photos/thumbnails/'.$product->thumbnail) }}" alt="Product Images">
-									<img class="hover-img" src="{{ asset('photos/thumbnails/'.$product->thumbnail) }}" alt="Product Images">
-								</a>
-
+	</div>
+</div>
+<section class="section-maker">
+	<div class="container">
+		<div class="sec-maker-header text-center">
+			<h3 class="sec-maker-h3">NEW PRODUCTS</h3>
+			<!-- Carousel -->
+			<div class="slider-fouc">
+				<div class="products-slider owl-carousel" data-item="4">
+					@foreach ($products as $product)
+					<div class="item">
+						<div class="image-container">
+							<a class="item-img-wrapper-link" href="{{ route('product.details', $product->slug) }}">
+								<img class="img-fluid" src="{{ asset('photos/thumbnails/'.$product->thumbnail) }}" alt="{{ $product->name }}">
+							</a>
+							<div class="item-action-behaviors">
+								<a class="item-quick-look" data-toggle="modal" href="#quick-view{{$product->id}}">Quick Look</a>
+								<a class="item-addCart add-to-cart" href="#" data-id="{{$product->id}}">Add to Cart</a>
 							</div>
-							<div class="product-content">
-								<div class="inner">
-									<h5 class="title"><a href="{{ route('product.details', $product->slug) }}">{{ $product->name }}</a></h5>
-									<div class="product-price-variant">
-										<span class="price current-price">Tsh {{number_format($product->price)}}</span>
-									</div>
-								</div>
-								<div>
-									<ul class="cart-action justify-content-center">
-										<li class="select-option add-to-cart" data-id="{{$product->id}}"><a href="#">Add to Cart</a></li>
-										<li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal{{$product->id}}"><i class="far fa-eye"></i></a></li>
-									</ul>
+						</div>
+						<div class="item-content">
+							<div class="what-product-is">
+								<ul class="bread-crumb">
+									<li>
+										<a href="{{route('filter.category', $product->category->slug)}}">{{$product->category->name}}</a>
+									</li>
+								</ul>
+								<h6 class="item-title">
+									<a href="{{ route('product.details', $product->slug) }}">{{ $product->name }}</a>
+								</h6>
+							</div>
+							<div class="price-template">
+								<div class="item-new-price">
+									Tsh {{ number_format($product->price) }}
 								</div>
 							</div>
+						</div>
+						<div class="tag hot">
+							<span>HOT</span>
 						</div>
 					</div>
 					@endforeach
 
+
+
 				</div>
 			</div>
+			<!-- Carousel /- -->
 		</div>
-		
-	</div>
-</div>
-<!-- End Shop Area  -->
+</section>
 @endsection

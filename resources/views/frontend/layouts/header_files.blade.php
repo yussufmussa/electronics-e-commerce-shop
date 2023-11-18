@@ -13,10 +13,29 @@
     <title>@yield('title')</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ asset('photos/general/'.$setting->first()->favicaon) }}" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{asset('frontend/assets/css/styles.css')}}" rel="stylesheet" />
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- Base Google Font for Web-app -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <!-- Google Fonts for Banners only -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,800" rel="stylesheet">
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.min.css')}}">
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/fontawesome.min.css')}}">
+    <!-- Ion-Icons 4 -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/ionicons.min.css')}}">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/animate.min.css')}}">
+    <!-- Owl-Carousel -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/owl.carousel.min.css')}}">
+    <!-- Jquery-Ui-Range-Slider -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/jquery-ui-range-slider.min.css')}}">
+    <!-- Utility -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/utility.css')}}">
+    <!-- Main -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/bundle.css')}}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id={{$setting->first()->google_analytics_link}}"></script>
     <script>

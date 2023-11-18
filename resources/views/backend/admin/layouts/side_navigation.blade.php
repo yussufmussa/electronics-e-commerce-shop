@@ -37,6 +37,8 @@
         <h6 class="collapse-header">Products</h6>
         <a class="collapse-item" href="{{route('admin.products.index')}}">Manage Products</a>
         <a class="collapse-item" href="{{route('admin.category.index')}}">Manage Categories</a>
+        <a class="collapse-item" href="{{route('admin.sliders.index')}}">Manage Sliders</a>
+
       </div>
     </div>
   </li>

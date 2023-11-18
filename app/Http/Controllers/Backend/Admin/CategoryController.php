@@ -45,17 +45,13 @@ class CategoryController extends Controller
         //
         $request->validate([
             'name' => 'required|unique:categories',
-            'photo' => 'required|mimes:png,jpg,JPG,jpeg',
 
         ]);
 
-        $renamePhoto = time(). '.' .$request->photo->extension();
         $category = new Category();
         $category->name = $request->name;
-        $category->category_photo = $renamePhoto;
         $category->slug = Str::slug($request->name);
         $category->save();
-        $request->photo->move(public_path('photos/category_photo'), $renamePhoto);
         return redirect()->route('admin.category.index')->with('message', 'Category Created');
     }
 
@@ -96,18 +92,10 @@ class CategoryController extends Controller
         $category = Category::findorfail($id);
         $request->validate([
             'name' => 'required',
-            'photo' => 'required|mimes:png,jpg,jpeg',
 
         ]);
 
-        if($request->hasFile('photo')){
-            $photoPath = public_path().'/photos/category_photo/'.$category->category_photo;
-            File::delete($photoPath);
-            $renamePhoto = time(). '.' .$request->photo->extension();
-            $request->photo->move(public_path('/photos/category_photo/'), $renamePhoto);
-            $category->category_photo = $renamePhoto;
-
-        }
+        
         $data = [
             'name' => $request->name,
             'slug' => Str::slug($request->name),
@@ -126,9 +114,6 @@ class CategoryController extends Controller
     {
         $category = Category::findorfail($id);
 
-        $photoPath = public_path().'/photos/category_photo/'.$category->category_photo;
-        File::delete($photoPath);
-        
         $delete = $category->delete();
         return back()->with('message', 'Category deleted');
     }

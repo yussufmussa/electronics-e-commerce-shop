@@ -1,19 +1,31 @@
-<script src="{{asset('frontend/assets/js/vendor/modernizr.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/jquery.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/popper.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/bootstrap.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/slick.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/js.cookie.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/jquery-ui.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/jquery.ui.touch-punch.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/jquery.countdown.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/sal.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/jquery.magnific-popup.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/imagesloaded.pkgd.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/isotope.pkgd.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/counterup.js')}}"></script>
-<script src="{{asset('frontend/assets/js/vendor/waypoints.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/main.js')}}"></script>
+<!-- Modernizr-JS -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/vendor/modernizr-custom.min.js')}}"></script>
+<!-- NProgress -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/nprogress.min.js')}}"></script>
+<!-- jQuery -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/jquery.min.js')}}"></script>
+<!-- Bootstrap JS -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
+<!-- Popper -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/popper.min.js')}}"></script>
+<!-- ScrollUp -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/jquery.scrollUp.min.js')}}"></script>
+<!-- Elevate Zoom -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/jquery.elevatezoom.min.js')}}"></script>
+<!-- jquery-ui-range-slider -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/jquery-ui.range-slider.min.js')}}"></script>
+<!-- jQuery Slim-Scroll -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/jquery.slimscroll.min.js')}}"></script>
+<!-- jQuery Resize-Select -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/jquery.resize-select.min.js')}}"></script>
+<!-- jQuery Custom Mega Menu -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/jquery.custom-megamenu.min.js')}}"></script>
+<!-- jQuery Countdown -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/jquery.custom-countdown.min.js')}}"></script>
+<!-- Owl Carousel -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/owl.carousel.min.js')}}"></script>
+<!-- Main -->
+<script type="text/javascript" src="{{asset('frontend/assets/js/app.js')}}"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script>
@@ -133,4 +145,5 @@
 @yield('extra_js_script')
 @livewireScripts
 </body>
+
 </html>

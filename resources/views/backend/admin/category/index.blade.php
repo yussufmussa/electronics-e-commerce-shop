@@ -28,7 +28,6 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Photo</th>
                                     <th>Category Name</th>
                                     <th>No. of Products</th>
                                     <th>Action</th>
@@ -39,9 +38,7 @@
                                 @foreach ($categories as $key => $category)
                                 <tr>
                                     <td>{{$key + 1}}</td>
-                                    <td>
-                                        <img src="{{asset('photos/category_photo/'.$category->category_photo)}}" class="img-fluid">
-                                    </td>
+                                    
                                     <td>{{$category->name}}</td>
                                     <td>{{$category->products->count()}}</td>
                                     <td>

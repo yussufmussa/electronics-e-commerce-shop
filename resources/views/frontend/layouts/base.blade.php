@@ -1,43 +1,55 @@
 @include('frontend.layouts.header_files')
-    <body>
-        <!-- Navigation-->
-        @include('frontend.layouts.header')
-        <!-- Header-->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="https://ladytourguide.co.tz/photos/bg/ladytourguide.jpeg" alt="First slide">
+
+<body>
+
+<!-- app -->
+<div id="app">
+    <!-- Header -->
+    @include('frontend.layouts.header')
+    <!-- Header /- -->
+    @yield('contents')
+    
+
+    <!-- Footer -->
+    @include('frontend.layouts.footer')
+    <!-- Footer /- -->
+    <!-- Dummy Selectbox -->
+    <div class="select-dummy-wrapper">
+        <select id="compute-select">
+            <option id="compute-option">All</option>
+        </select>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://ladytourguide.co.tz/photos/bg/ladytourguide.jpeg" alt="Second slide">
+    <!-- Dummy Selectbox /- -->
+    <!-- Responsive-Search -->
+    <div class="responsive-search-wrapper">
+        <button type="button" class="button ion ion-md-close" id="responsive-search-close-button"></button>
+        <div class="responsive-search-container">
+            <div class="container">
+                <p>Start typing and press Enter to search</p>
+                <form class="responsive-search-form">
+                    <label class="sr-only" for="search-text">Search</label>
+                    <input id="search-text" type="text" class="responsive-search-field" placeholder="PLEASE SEARCH">
+                    <i class="fas fa-search"></i>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <!-- Responsive-Search /- -->
+    
 </div>
-        <!-- Section-->
-        @include('frontend.partials.top')
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-</html>
+<noscript>
+    <div class="app-issue">
+        <div class="vertical-center">
+            <div class="text-center">
+                <h1>JavaScript is disabled in your browser.</h1>
+                <span>Please enable JavaScript in your browser or upgrade to a JavaScript-capable browser to register for Groover.</span>
+            </div>
+        </div>
+    </div>
+    <style>
+    #app {
+        display: none;
+    }
+    </style>
+</noscript>
+@include('frontend.layouts.footer_files')

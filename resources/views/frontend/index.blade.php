@@ -26,10 +26,8 @@
 
 @section('contents')
 
-		@include('frontend.partials.hero')
-        @include('frontend.partials.categories')
-		@include('frontend.partials.top')
-		@include('frontend.partials.why')
+@include('frontend.partials.hero')
+@include('frontend.partials.top')
 
 
 @endsection
