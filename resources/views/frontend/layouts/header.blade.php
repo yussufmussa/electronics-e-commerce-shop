@@ -1,87 +1,27 @@
-<header class="header axil-header header-style-5">
-	@include('frontend.layouts.top_bar')
-	<!-- Start Mainmenu Area  -->
-	<div id="axil-sticky-placeholder"></div>
-	<div class="axil-mainmenu">
-		<div class="container">
-			<div class="header-navbar">
-				<div class="header-brand">
-					<a href="/" class="logo logo-dark">
-						<img src="{{ asset('photos/general/'.$setting->first()->logo) }}" alt="Binshop Logo" width="100px" height="30px">
-					</a>
-					<a href="/" class="logo logo-light">
-						<img src="{{ asset('photos/general/'.$setting->first()->logo) }}" alt="Binshop Logo">
-					</a>
-				</div>
-				<div class="header-main-nav">
-					<!-- Start Mainmanu Nav -->
-					<nav class="mainmenu-nav">
-						<button class="mobile-close-btn mobile-nav-toggler"><i class="fas fa-times"></i></button>
-						<div class="mobile-nav-brand">
-							<a href="/" class="logo">
-								<img src="{{ asset('photos/general/'.$setting->first()->logo) }}" alt="Binshop Logo">
-							</a>
-						</div>
-						<ul class="mainmenu">
-							<li>
-								<a href="/" class="{{request()->is('/') ? 'active' : ''}}">Home</a>
-							</li>
-							<li >
-								<a href="/products" class="{{request()->is('products') ? 'active' : ''}}">All Products</a>
-								
-							</li>
-							
-							<li><a href="/contact-us">Contact</a></li>
-						</ul>
-					</nav>
-					<!-- End Mainmanu Nav -->
-				</div>
-				<div class="header-action">
-					<ul class="action-list">
-						<li class="d-xl-block d-none">
-							<form action="/searchProduct" method="get">@csrf
-							<input type="text" class="" name="keywords"   placeholder="What are you looking for?" autocomplete="off">
-							</form>
-						</li>
-						<li class="shopping-cart">
-							<a href="#" class="cart-dropdown-btn">
-								<span class="cart-count" id="cart-quantity"></span>
-								<i class="flaticon-shopping-cart"></i>
-							</a>
-						</li>
-						@if(!auth()->user())
-						<li class="my-account">
-							<a href="javascript:void(0)">
-								<i class="flaticon-person"></i>
-							</a>
-							<div class="my-account-dropdown">
-								<span class="title">QUICKLINKS</span>
-								<ul>
-									<li>
-										<a href="/">My Account</a>
-									</li>
-									<li>
-										<a href="#">Profile</a>
-									</li>
-									<li>
-										<a href="#">Log out</a>
-									</li>
-								</ul>
-								
-							</div>
-						</li>
-						@endif
-						<li class="axil-mobile-toggle">
-							<button class="menu-btn mobile-nav-toggler">
-								<i class="flaticon-menu-2"></i>
-							</button>
-						</li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container px-4 px-lg-5">
+		<a class="navbar-brand" href="#!">Electronic E-commerce</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+				<li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="/products">About</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						@foreach ($categories as $category)
+						<li><a class="dropdown-item" href=" {{ route('filter.category', $category->slug) }}">{{$category->name}}</a></li>
+						@endforeach
 					</ul>
-				</div>
-			</div>
+				</li>
+			</ul>
+			<form class="d-flex">
+				<button class="btn btn-outline-dark" type="submit">
+					<i class="bi-cart-fill me-1"></i>
+					Cart
+					<span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+				</button>
+			</form>
 		</div>
 	</div>
-	<!-- End Mainmenu Area -->
-
-</header>
-<!-- End Header -->
+</nav>
